@@ -2,16 +2,20 @@ stages:
   - build
   - deploy
 
-# Пример job для билда
 build:
   stage: build
   script:
     - echo "Build job is running"
+    - echo "Commit Ref Name: $CI_COMMIT_REF_NAME"
+    - echo "Job ID: $CI_JOB_ID"
+    - echo "Pipeline ID: $CI_PIPELINE_ID"
 
-# Новая job для деплоя
 deploy:
   stage: deploy
   script:
     - echo "Deploy job is running"
+    - echo "Commit Ref Name: $CI_COMMIT_REF_NAME"
+    - echo "Job ID: $CI_JOB_ID"
+    - echo "Pipeline ID: $CI_PIPELINE_ID"
   variables:
-    DEPLOY_ENV: "production"   # Пример переменной окружения
+    DEPLOY_ENV: "production"
