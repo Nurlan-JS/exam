@@ -1,0 +1,17 @@
+stages:
+  - build
+  - deploy
+
+# Пример job для билда
+build:
+  stage: build
+  script:
+    - echo "Build job is running"
+
+# Новая job для деплоя
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploy job is running"
+  variables:
+    DEPLOY_ENV: "production"   # Пример переменной окружения
